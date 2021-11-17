@@ -264,6 +264,8 @@
 <!--=========================================================================-->
 
 <Type Name="iree_hal_buffer_view_t">
+  <DisplayString Condition="shape_rank==0 &amp;&amp; element_type==IREE_HAL_ELEMENT_TYPE_SINT_4">{{!hal.buffer_view&lt;si4&gt; size={byte_length}}}</DisplayString>
+  <DisplayString Condition="shape_rank==0 &amp;&amp; element_type==IREE_HAL_ELEMENT_TYPE_UINT_4">{{!hal.buffer_view&lt;ui4&gt; size={byte_length}}}</DisplayString>
   <DisplayString Condition="shape_rank==0 &amp;&amp; element_type==IREE_HAL_ELEMENT_TYPE_SINT_8">{{!hal.buffer_view&lt;si8&gt; size={byte_length}}}</DisplayString>
   <DisplayString Condition="shape_rank==0 &amp;&amp; element_type==IREE_HAL_ELEMENT_TYPE_UINT_8">{{!hal.buffer_view&lt;ui8&gt; size={byte_length}}}</DisplayString>
   <DisplayString Condition="shape_rank==0 &amp;&amp; element_type==IREE_HAL_ELEMENT_TYPE_SINT_16">{{!hal.buffer_view&lt;si16&gt; size={byte_length}}}</DisplayString>
@@ -275,7 +277,10 @@
   <DisplayString Condition="shape_rank==0 &amp;&amp; element_type==IREE_HAL_ELEMENT_TYPE_FLOAT_16">{{!hal.buffer_view&lt;f16&gt; size={byte_length}}}</DisplayString>
   <DisplayString Condition="shape_rank==0 &amp;&amp; element_type==IREE_HAL_ELEMENT_TYPE_FLOAT_32">{{!hal.buffer_view&lt;f32&gt; size={byte_length}}}</DisplayString>
   <DisplayString Condition="shape_rank==0 &amp;&amp; element_type==IREE_HAL_ELEMENT_TYPE_FLOAT_64">{{!hal.buffer_view&lt;f64&gt; size={byte_length}}}</DisplayString>
+  <DisplayString Condition="shape_rank==0 &amp;&amp; element_type==IREE_HAL_ELEMENT_TYPE_BFLOAT_16">{{!hal.buffer_view&lt;bf16&gt; size={byte_length}}}</DisplayString>
 
+  <DisplayString Condition="shape_rank==1 &amp;&amp; element_type==IREE_HAL_ELEMENT_TYPE_SINT_4">{{!hal.buffer_view&lt;{shape[0]}xsi4&gt; size={byte_length}}}</DisplayString>
+  <DisplayString Condition="shape_rank==1 &amp;&amp; element_type==IREE_HAL_ELEMENT_TYPE_UINT_4">{{!hal.buffer_view&lt;{shape[0]}xui4&gt; size={byte_length}}}</DisplayString>
   <DisplayString Condition="shape_rank==1 &amp;&amp; element_type==IREE_HAL_ELEMENT_TYPE_SINT_8">{{!hal.buffer_view&lt;{shape[0]}xsi8&gt; size={byte_length}}}</DisplayString>
   <DisplayString Condition="shape_rank==1 &amp;&amp; element_type==IREE_HAL_ELEMENT_TYPE_UINT_8">{{!hal.buffer_view&lt;{shape[0]}xui8&gt; size={byte_length}}}</DisplayString>
   <DisplayString Condition="shape_rank==1 &amp;&amp; element_type==IREE_HAL_ELEMENT_TYPE_SINT_16">{{!hal.buffer_view&lt;{shape[0]}xsi16&gt; size={byte_length}}}</DisplayString>
@@ -287,7 +292,10 @@
   <DisplayString Condition="shape_rank==1 &amp;&amp; element_type==IREE_HAL_ELEMENT_TYPE_FLOAT_16">{{!hal.buffer_view&lt;{shape[0]}xf16&gt; size={byte_length}}}</DisplayString>
   <DisplayString Condition="shape_rank==1 &amp;&amp; element_type==IREE_HAL_ELEMENT_TYPE_FLOAT_32">{{!hal.buffer_view&lt;{shape[0]}xf32&gt; size={byte_length}}}</DisplayString>
   <DisplayString Condition="shape_rank==1 &amp;&amp; element_type==IREE_HAL_ELEMENT_TYPE_FLOAT_64">{{!hal.buffer_view&lt;{shape[0]}xf64&gt; size={byte_length}}}</DisplayString>
+  <DisplayString Condition="shape_rank==1 &amp;&amp; element_type==IREE_HAL_ELEMENT_TYPE_BFLOAT_16">{{!hal.buffer_view&lt;{shape[0]}xbf16&gt; size={byte_length}}}</DisplayString>
 
+  <DisplayString Condition="shape_rank==2 &amp;&amp; element_type==IREE_HAL_ELEMENT_TYPE_SINT_4">{{!hal.buffer_view&lt;{shape[0]}x{shape[1]}xsi4&gt; size={byte_length}}}</DisplayString>
+  <DisplayString Condition="shape_rank==2 &amp;&amp; element_type==IREE_HAL_ELEMENT_TYPE_UINT_4">{{!hal.buffer_view&lt;{shape[0]}x{shape[1]}xui4&gt; size={byte_length}}}</DisplayString>
   <DisplayString Condition="shape_rank==2 &amp;&amp; element_type==IREE_HAL_ELEMENT_TYPE_SINT_8">{{!hal.buffer_view&lt;{shape[0]}x{shape[1]}xsi8&gt; size={byte_length}}}</DisplayString>
   <DisplayString Condition="shape_rank==2 &amp;&amp; element_type==IREE_HAL_ELEMENT_TYPE_UINT_8">{{!hal.buffer_view&lt;{shape[0]}x{shape[1]}xui8&gt; size={byte_length}}}</DisplayString>
   <DisplayString Condition="shape_rank==2 &amp;&amp; element_type==IREE_HAL_ELEMENT_TYPE_SINT_16">{{!hal.buffer_view&lt;{shape[0]}x{shape[1]}xsi16&gt; size={byte_length}}}</DisplayString>
@@ -299,7 +307,10 @@
   <DisplayString Condition="shape_rank==2 &amp;&amp; element_type==IREE_HAL_ELEMENT_TYPE_FLOAT_16">{{!hal.buffer_view&lt;{shape[0]}x{shape[1]}xf16&gt; size={byte_length}}}</DisplayString>
   <DisplayString Condition="shape_rank==2 &amp;&amp; element_type==IREE_HAL_ELEMENT_TYPE_FLOAT_32">{{!hal.buffer_view&lt;{shape[0]}x{shape[1]}xf32&gt; size={byte_length}}}</DisplayString>
   <DisplayString Condition="shape_rank==2 &amp;&amp; element_type==IREE_HAL_ELEMENT_TYPE_FLOAT_64">{{!hal.buffer_view&lt;{shape[0]}x{shape[1]}xf64&gt; size={byte_length}}}</DisplayString>
+  <DisplayString Condition="shape_rank==2 &amp;&amp; element_type==IREE_HAL_ELEMENT_TYPE_BFLOAT_16">{{!hal.buffer_view&lt;{shape[0]}x{shape[1]}xbf16&gt; size={byte_length}}}</DisplayString>
 
+  <DisplayString Condition="shape_rank==2 &amp;&amp; element_type==IREE_HAL_ELEMENT_TYPE_SINT_4">{{!hal.buffer_view&lt;{shape[0]}x{shape[1]}xsi4&gt; size={byte_length}}}</DisplayString>
+  <DisplayString Condition="shape_rank==2 &amp;&amp; element_type==IREE_HAL_ELEMENT_TYPE_UINT_4">{{!hal.buffer_view&lt;{shape[0]}x{shape[1]}xui4&gt; size={byte_length}}}</DisplayString>
   <DisplayString Condition="shape_rank==2 &amp;&amp; element_type==IREE_HAL_ELEMENT_TYPE_SINT_8">{{!hal.buffer_view&lt;{shape[0]}x{shape[1]}xsi8&gt; size={byte_length}}}</DisplayString>
   <DisplayString Condition="shape_rank==2 &amp;&amp; element_type==IREE_HAL_ELEMENT_TYPE_UINT_8">{{!hal.buffer_view&lt;{shape[0]}x{shape[1]}xui8&gt; size={byte_length}}}</DisplayString>
   <DisplayString Condition="shape_rank==2 &amp;&amp; element_type==IREE_HAL_ELEMENT_TYPE_SINT_16">{{!hal.buffer_view&lt;{shape[0]}x{shape[1]}xsi16&gt; size={byte_length}}}</DisplayString>
@@ -311,7 +322,10 @@
   <DisplayString Condition="shape_rank==2 &amp;&amp; element_type==IREE_HAL_ELEMENT_TYPE_FLOAT_16">{{!hal.buffer_view&lt;{shape[0]}x{shape[1]}xf16&gt; size={byte_length}}}</DisplayString>
   <DisplayString Condition="shape_rank==2 &amp;&amp; element_type==IREE_HAL_ELEMENT_TYPE_FLOAT_32">{{!hal.buffer_view&lt;{shape[0]}x{shape[1]}xf32&gt; size={byte_length}}}</DisplayString>
   <DisplayString Condition="shape_rank==2 &amp;&amp; element_type==IREE_HAL_ELEMENT_TYPE_FLOAT_64">{{!hal.buffer_view&lt;{shape[0]}x{shape[1]}xf64&gt; size={byte_length}}}</DisplayString>
+  <DisplayString Condition="shape_rank==2 &amp;&amp; element_type==IREE_HAL_ELEMENT_TYPE_BFLOAT_16">{{!hal.buffer_view&lt;{shape[0]}x{shape[1]}xbf16&gt; size={byte_length}}}</DisplayString>
 
+  <DisplayString Condition="shape_rank==3 &amp;&amp; element_type==IREE_HAL_ELEMENT_TYPE_SINT_4">{{!hal.buffer_view&lt;{shape[0]}x{shape[1]}x{shape[2]}xsi4&gt; size={byte_length}}}</DisplayString>
+  <DisplayString Condition="shape_rank==3 &amp;&amp; element_type==IREE_HAL_ELEMENT_TYPE_UINT_4">{{!hal.buffer_view&lt;{shape[0]}x{shape[1]}x{shape[2]}xui4&gt; size={byte_length}}}</DisplayString>
   <DisplayString Condition="shape_rank==3 &amp;&amp; element_type==IREE_HAL_ELEMENT_TYPE_SINT_8">{{!hal.buffer_view&lt;{shape[0]}x{shape[1]}x{shape[2]}xsi8&gt; size={byte_length}}}</DisplayString>
   <DisplayString Condition="shape_rank==3 &amp;&amp; element_type==IREE_HAL_ELEMENT_TYPE_UINT_8">{{!hal.buffer_view&lt;{shape[0]}x{shape[1]}x{shape[2]}xui8&gt; size={byte_length}}}</DisplayString>
   <DisplayString Condition="shape_rank==3 &amp;&amp; element_type==IREE_HAL_ELEMENT_TYPE_SINT_16">{{!hal.buffer_view&lt;{shape[0]}x{shape[1]}x{shape[2]}xsi16&gt; size={byte_length}}}</DisplayString>
@@ -323,7 +337,10 @@
   <DisplayString Condition="shape_rank==3 &amp;&amp; element_type==IREE_HAL_ELEMENT_TYPE_FLOAT_16">{{!hal.buffer_view&lt;{shape[0]}x{shape[1]}x{shape[2]}xf16&gt; size={byte_length}}}</DisplayString>
   <DisplayString Condition="shape_rank==3 &amp;&amp; element_type==IREE_HAL_ELEMENT_TYPE_FLOAT_32">{{!hal.buffer_view&lt;{shape[0]}x{shape[1]}x{shape[2]}xf32&gt; size={byte_length}}}</DisplayString>
   <DisplayString Condition="shape_rank==3 &amp;&amp; element_type==IREE_HAL_ELEMENT_TYPE_FLOAT_64">{{!hal.buffer_view&lt;{shape[0]}x{shape[1]}x{shape[2]}xf64&gt; size={byte_length}}}</DisplayString>
+  <DisplayString Condition="shape_rank==3 &amp;&amp; element_type==IREE_HAL_ELEMENT_TYPE_BFLOAT_16">{{!hal.buffer_view&lt;{shape[0]}x{shape[1]}x{shape[2]}xbf16&gt; size={byte_length}}}</DisplayString>
 
+  <DisplayString Condition="shape_rank==4 &amp;&amp; element_type==IREE_HAL_ELEMENT_TYPE_SINT_4">{{!hal.buffer_view&lt;{shape[0]}x{shape[1]}x{shape[2]}x{shape[3]}xsi4&gt; size={byte_length}}}</DisplayString>
+  <DisplayString Condition="shape_rank==4 &amp;&amp; element_type==IREE_HAL_ELEMENT_TYPE_UINT_4">{{!hal.buffer_view&lt;{shape[0]}x{shape[1]}x{shape[2]}x{shape[3]}xui4&gt; size={byte_length}}}</DisplayString>
   <DisplayString Condition="shape_rank==4 &amp;&amp; element_type==IREE_HAL_ELEMENT_TYPE_SINT_8">{{!hal.buffer_view&lt;{shape[0]}x{shape[1]}x{shape[2]}x{shape[3]}xsi8&gt; size={byte_length}}}</DisplayString>
   <DisplayString Condition="shape_rank==4 &amp;&amp; element_type==IREE_HAL_ELEMENT_TYPE_UINT_8">{{!hal.buffer_view&lt;{shape[0]}x{shape[1]}x{shape[2]}x{shape[3]}xui8&gt; size={byte_length}}}</DisplayString>
   <DisplayString Condition="shape_rank==4 &amp;&amp; element_type==IREE_HAL_ELEMENT_TYPE_SINT_16">{{!hal.buffer_view&lt;{shape[0]}x{shape[1]}x{shape[2]}x{shape[3]}xsi16&gt; size={byte_length}}}</DisplayString>
@@ -335,7 +352,10 @@
   <DisplayString Condition="shape_rank==4 &amp;&amp; element_type==IREE_HAL_ELEMENT_TYPE_FLOAT_16">{{!hal.buffer_view&lt;{shape[0]}x{shape[1]}x{shape[2]}x{shape[3]}xf16&gt; size={byte_length}}}</DisplayString>
   <DisplayString Condition="shape_rank==4 &amp;&amp; element_type==IREE_HAL_ELEMENT_TYPE_FLOAT_32">{{!hal.buffer_view&lt;{shape[0]}x{shape[1]}x{shape[2]}x{shape[3]}xf32&gt; size={byte_length}}}</DisplayString>
   <DisplayString Condition="shape_rank==4 &amp;&amp; element_type==IREE_HAL_ELEMENT_TYPE_FLOAT_64">{{!hal.buffer_view&lt;{shape[0]}x{shape[1]}x{shape[2]}x{shape[3]}xf64&gt; size={byte_length}}}</DisplayString>
+  <DisplayString Condition="shape_rank==4 &amp;&amp; element_type==IREE_HAL_ELEMENT_TYPE_BFLOAT_16">{{!hal.buffer_view&lt;{shape[0]}x{shape[1]}x{shape[2]}x{shape[3]}xbf16&gt; size={byte_length}}}</DisplayString>
 
+  <DisplayString Condition="shape_rank==5 &amp;&amp; element_type==IREE_HAL_ELEMENT_TYPE_SINT_4">{{!hal.buffer_view&lt;{shape[0]}x{shape[1]}x{shape[2]}x{shape[3]}x{shape[4]}xsi4&gt; size={byte_length}}}</DisplayString>
+  <DisplayString Condition="shape_rank==5 &amp;&amp; element_type==IREE_HAL_ELEMENT_TYPE_UINT_4">{{!hal.buffer_view&lt;{shape[0]}x{shape[1]}x{shape[2]}x{shape[3]}x{shape[4]}xui4&gt; size={byte_length}}}</DisplayString>
   <DisplayString Condition="shape_rank==5 &amp;&amp; element_type==IREE_HAL_ELEMENT_TYPE_SINT_8">{{!hal.buffer_view&lt;{shape[0]}x{shape[1]}x{shape[2]}x{shape[3]}x{shape[4]}xsi8&gt; size={byte_length}}}</DisplayString>
   <DisplayString Condition="shape_rank==5 &amp;&amp; element_type==IREE_HAL_ELEMENT_TYPE_UINT_8">{{!hal.buffer_view&lt;{shape[0]}x{shape[1]}x{shape[2]}x{shape[3]}x{shape[4]}xui8&gt; size={byte_length}}}</DisplayString>
   <DisplayString Condition="shape_rank==5 &amp;&amp; element_type==IREE_HAL_ELEMENT_TYPE_SINT_16">{{!hal.buffer_view&lt;{shape[0]}x{shape[1]}x{shape[2]}x{shape[3]}x{shape[4]}xsi16&gt; size={byte_length}}}</DisplayString>
@@ -347,7 +367,10 @@
   <DisplayString Condition="shape_rank==5 &amp;&amp; element_type==IREE_HAL_ELEMENT_TYPE_FLOAT_16">{{!hal.buffer_view&lt;{shape[0]}x{shape[1]}x{shape[2]}x{shape[3]}x{shape[4]}xf16&gt; size={byte_length}}}</DisplayString>
   <DisplayString Condition="shape_rank==5 &amp;&amp; element_type==IREE_HAL_ELEMENT_TYPE_FLOAT_32">{{!hal.buffer_view&lt;{shape[0]}x{shape[1]}x{shape[2]}x{shape[3]}x{shape[4]}xf32&gt; size={byte_length}}}</DisplayString>
   <DisplayString Condition="shape_rank==5 &amp;&amp; element_type==IREE_HAL_ELEMENT_TYPE_FLOAT_64">{{!hal.buffer_view&lt;{shape[0]}x{shape[1]}x{shape[2]}x{shape[3]}x{shape[4]}xf64&gt; size={byte_length}}}</DisplayString>
+  <DisplayString Condition="shape_rank==5 &amp;&amp; element_type==IREE_HAL_ELEMENT_TYPE_BFLOAT_16">{{!hal.buffer_view&lt;{shape[0]}x{shape[1]}x{shape[2]}x{shape[3]}x{shape[4]}xbf16&gt; size={byte_length}}}</DisplayString>
 
+  <DisplayString Condition="shape_rank==6 &amp;&amp; element_type==IREE_HAL_ELEMENT_TYPE_SINT_4">{{!hal.buffer_view&lt;{shape[0]}x{shape[1]}x{shape[2]}x{shape[3]}x{shape[4]}x{shape[5]}xsi4&gt; size={byte_length}}}</DisplayString>
+  <DisplayString Condition="shape_rank==6 &amp;&amp; element_type==IREE_HAL_ELEMENT_TYPE_UINT_4">{{!hal.buffer_view&lt;{shape[0]}x{shape[1]}x{shape[2]}x{shape[3]}x{shape[4]}x{shape[5]}xui4&gt; size={byte_length}}}</DisplayString>
   <DisplayString Condition="shape_rank==6 &amp;&amp; element_type==IREE_HAL_ELEMENT_TYPE_SINT_8">{{!hal.buffer_view&lt;{shape[0]}x{shape[1]}x{shape[2]}x{shape[3]}x{shape[4]}x{shape[5]}xsi8&gt; size={byte_length}}}</DisplayString>
   <DisplayString Condition="shape_rank==6 &amp;&amp; element_type==IREE_HAL_ELEMENT_TYPE_UINT_8">{{!hal.buffer_view&lt;{shape[0]}x{shape[1]}x{shape[2]}x{shape[3]}x{shape[4]}x{shape[5]}xui8&gt; size={byte_length}}}</DisplayString>
   <DisplayString Condition="shape_rank==6 &amp;&amp; element_type==IREE_HAL_ELEMENT_TYPE_SINT_16">{{!hal.buffer_view&lt;{shape[0]}x{shape[1]}x{shape[2]}x{shape[3]}x{shape[4]}x{shape[5]}xsi16&gt; size={byte_length}}}</DisplayString>
@@ -359,6 +382,7 @@
   <DisplayString Condition="shape_rank==6 &amp;&amp; element_type==IREE_HAL_ELEMENT_TYPE_FLOAT_16">{{!hal.buffer_view&lt;{shape[0]}x{shape[1]}x{shape[2]}x{shape[3]}x{shape[4]}x{shape[5]}xf16&gt; size={byte_length}}}</DisplayString>
   <DisplayString Condition="shape_rank==6 &amp;&amp; element_type==IREE_HAL_ELEMENT_TYPE_FLOAT_32">{{!hal.buffer_view&lt;{shape[0]}x{shape[1]}x{shape[2]}x{shape[3]}x{shape[4]}x{shape[5]}xf32&gt; size={byte_length}}}</DisplayString>
   <DisplayString Condition="shape_rank==6 &amp;&amp; element_type==IREE_HAL_ELEMENT_TYPE_FLOAT_64">{{!hal.buffer_view&lt;{shape[0]}x{shape[1]}x{shape[2]}x{shape[3]}x{shape[4]}x{shape[5]}xf64&gt; size={byte_length}}}</DisplayString>
+  <DisplayString Condition="shape_rank==6 &amp;&amp; element_type==IREE_HAL_ELEMENT_TYPE_BFLOAT_16">{{!hal.buffer_view&lt;{shape[0]}x{shape[1]}x{shape[2]}x{shape[3]}x{shape[4]}x{shape[5]}xbf16&gt; size={byte_length}}}</DisplayString>
 
   <Expand>
     <Item Name="[references]" ExcludeView="simple">ref_count</Item>

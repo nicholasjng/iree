@@ -297,16 +297,19 @@ enum class NumericalType : uint32_t {
   kIntegerUnsigned = 0x02,
   // TODO(benvanik): specialize with semantics from APFloat.
   kFloatIEEE = 0x03,
+  kFloatBrain = 0x04,
 };
 constexpr inline int32_t makeElementTypeValue(NumericalType numericalType,
                                               int32_t bitCount) {
   return (static_cast<uint32_t>(numericalType) << 24) | bitCount;
 }
 }  // namespace
+
 llvm::Optional<int32_t> getElementTypeValue(Type type) {
   if (auto intType = type.dyn_cast_or_null<IntegerType>()) {
-    // TODO(benvanik): add signed/unsigned check when landed in MLIR.
-    return makeElementTypeValue(NumericalType::kIntegerSigned,
+    return makeElementTypeValue(intType.isUnsigned()
+                                    ? NumericalType::kIntegerUnsigned
+                                    : NumericalType::kIntegerSigned,
                                 intType.getWidth());
   } else if (auto floatType = type.dyn_cast_or_null<FloatType>()) {
     switch (APFloat::SemanticsToEnum(floatType.getFloatSemantics())) {
@@ -315,6 +318,9 @@ llvm::Optional<int32_t> getElementTypeValue(Type type) {
       case APFloat::S_IEEEdouble:
       case APFloat::S_IEEEquad:
         return makeElementTypeValue(NumericalType::kFloatIEEE,
+                                    floatType.getWidth());
+      case APFloat::S_BFloat:
+        return makeElementTypeValue(NumericalType::kFloatBrain,
                                     floatType.getWidth());
       default:
         return llvm::None;
